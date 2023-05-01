@@ -1,38 +1,33 @@
-var elements = [{ data: { id: "a" } }, { data: { id: "b" } }];
+var elements = []
 
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 25; i++) {
   elements.push({
     data: {
       id: "node" + i,
       isMutated: Math.random() > 0.85 ? true : false,
-      disease: "disease 1",
+      disease: Math.random() > .7 ? "disease 1" : "disease 2",
     },
-  });
-  var source = "node" + i;
-  elements.push({
-    data: {
-      id: "edge" + i,
-      source: source,
-      target: i % 2 === 0 ? "a" : "b",
-    },
-  });
+  })
 }
 
-for (var i = 10; i < 25; i++) {
-  elements.push({
-    data: {
-      id: "node" + i,
-      isMutated: Math.random() > 0.85 ? true : false,
-      disease: "disease 2",
-    },
-  });
-  var source = "node" + i;
-  elements.push({
-    data: {
-      id: "edge" + i,
-      source: source,
-      target: "node" + Math.floor(Math.random() * (i - 1)),
-    },
-  });
+for (i = 0; i < elements.length; i++) {
+  var randomTargetIndex = Math.floor(Math.random() * elements.length)
+  if(i !== randomTargetIndex) {
+    var source = 'node' + i
+    elements.push({
+      data: {
+        id: 'edge' + i,
+        source: source,
+        target: 'node' + randomTargetIndex
+      },
+      classes: [
+        Math.random() < .5 ? 'disease 1' : '',
+        Math.random() < .5 ? 'disease 2' : '',
+        Math.random() < .5 ? 'isMutated' : '',
+        Math.random() < .5 ? 'inhibitor' : 'tickler'
+      ]
+    })
+  }
 }
+
 export default elements;

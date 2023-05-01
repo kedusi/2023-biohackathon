@@ -7,5 +7,4 @@ const styledDiv = styled.div`
     top: 0px;
     left: 0px;
 `
-
 export default styledDiv
