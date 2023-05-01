@@ -11,11 +11,17 @@ export default function Graph() {
 
   const addToGroup = (el) => el.addClass("isGrouped");
 
+  const filterForDisease = (cy, disease) => {
+    cy.$("[disease='" + disease + "']").remove();
+  };
+
   useEffect(() => {
     console.log(cyRef);
     cyRef.on("tap", "node", (e) => {
       addToGroup(e.target);
     });
+
+    filterForDisease(cyRef, "disease 1");
   });
 
   return (
@@ -41,6 +47,12 @@ export default function Graph() {
             selector: ".isGrouped",
             style: {
               "background-color": "green",
+            },
+          },
+          {
+            selector: "[disease = 'disease 1']",
+            style: {
+              display: "none",
             },
           },
         ]}
