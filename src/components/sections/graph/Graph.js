@@ -11,9 +11,9 @@ export default function Graph() {
 
   const addToGroup = (el) => el.addClass("isGrouped");
 
-  const filterForDisease = (cy, disease) => {
-    return cy.$("node[disease!='" + disease + "']");
-  };
+  // const filterForDisease = (cy, disease) => {
+  //   cy.$("[disease='" + disease + "']").remove();
+  // };
 
   useEffect(() => {
     console.log(cyRef);
@@ -21,16 +21,43 @@ export default function Graph() {
       addToGroup(e.target);
     });
 
-    filterForDisease(cyRef, 'disease 1').remove()
-    cyRef.layout({name: 'circle'}).run()
+    // filterForDisease(cyRef, "disease 1");
   });
 
   return (
     <StyledDiv>
       <CytoscapeComponent
         cy={(cy) => (cyRef = cy)}
-        layout={{ name: "circle" }}
-        stylesheet={}
+        layout={{ name: "grid", rows: 5 }}
+        stylesheet={[
+          {
+            selector: "node",
+            style: {
+              "background-color": "tomato",
+              label: "data(id)",
+            },
+          },
+          {
+            selector: "node[?isMutated]",
+            style: {
+              shape: "star",
+            },
+          },
+          {
+            selector: ".isGrouped",
+            style: {
+              "background-color": "green",
+            },
+          },
+          {
+            selector: ".inhibitor",
+            style: {
+              lineColor: 'red',
+              "target-arrow-color": "red",
+              "target-arrow-shape": "triangle"
+            }
+          }
+        ]}
         elements={data}
         style={{
           height: "100%",

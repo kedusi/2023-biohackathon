@@ -9,9 +9,9 @@ for (var i = 0; i < 25; i++) {
     },
   })
 }
-
-for (i = 0; i < elements.length; i++) {
-  var randomTargetIndex = Math.floor(Math.random() * elements.length)
+const numElements = elements.length
+for (i = 0; i < numElements; i++) {
+  var randomTargetIndex = Math.floor(Math.random() * numElements)
   if(i !== randomTargetIndex) {
     var source = 'node' + i
     elements.push({
@@ -24,9 +24,10 @@ for (i = 0; i < elements.length; i++) {
         Math.random() < .5 ? 'disease 1' : '',
         Math.random() < .5 ? 'disease 2' : '',
         Math.random() < .5 ? 'isMutated' : '',
-        Math.random() < .5 ? 'inhibitor' : 'tickler'
+        Math.random() < .5 ? 'inhibitor' : 'promoter'
       ]
     })
+    console.log(source)
   }
 }
 
