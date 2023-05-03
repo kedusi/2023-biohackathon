@@ -1,0 +1,61 @@
+[
+    {
+      "selector": "node",
+      "style": {
+        "background-color": "gray",
+        "label": "data(id)"
+      }
+    },
+    {
+      "selector": "node[?isMutated]",
+      "style": {
+        "shape": "star",
+        "backgroundColor": "orange"
+      }
+    },
+    {
+      "selector": ".isGrouped",
+      "style": {
+        "background-color": "green"
+      }
+    },
+    {
+      "selector": "edge",
+      "style": {
+        "width": 1,
+        "curve-style": "bezier",
+        "arrow-scale": 2,
+        "label": "data(id)"
+      }
+    },
+    {
+      "selector": "[interaction = 'inhibit']",
+      "style": {
+        "lineColor": "red",
+        "target-arrow-color": "red",
+        "target-arrow-shape": "diamond"
+      }
+    },
+    {
+      "selector": "[interaction = 'activate']",
+      "style": {
+        "lineColor": "green",
+        "target-arrow-color": "green",
+        "target-arrow-shape": "triangle-backcurve"
+      }
+    },
+    {
+      "selector": "[interaction = 'suppress']",
+      "style": {
+        "lineColor": "purple",
+        "target-arrow-color": "purple",
+        "target-arrow-shape": "tee"
+      }
+    },
+    {
+      "selector": "edge[^interaction]",
+      "style": {
+        "lineColor": "blue"
+      }
+    }
+  ]

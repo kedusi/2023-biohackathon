@@ -1,4 +1,96 @@
-var elements = [];
+var elements = [
+  {
+    data: {
+      id: "A",
+      disease: "Leukemia",
+    },
+  },
+  {
+    data: {
+      id: "B",
+      disease: "Leukemia",
+    },
+  },
+  {
+    data: {
+      id: "C",
+      disease: "Leukemia",
+    },
+  },
+  {
+    data: {
+      id: "D",
+      disease: "Leukemia",
+    },
+  },
+  {
+    data: {
+      id: "E",
+      disease: "Leukemia",
+    },
+  },
+  {
+    data: {
+      id: "A activates C",
+      disease: "Leukemia",
+      source: "A",
+      target: "C",
+      interaction: "activate",
+    },
+  },
+  {
+    data: {
+      id: "C suppresses A",
+      disease: "Leukemia",
+      source: "C",
+      target: "A",
+      interaction: "suppress",
+    },
+  },
+  {
+    data: {
+      id: "A activates B",
+      disease: "Leukemia",
+      source: "A",
+      target: "B",
+      interaction: "activate",
+    },
+  },
+  {
+    data: {
+      id: "B suppresses C",
+      disease: "Leukemia",
+      source: "B",
+      target: "C",
+      interaction: "suppress",
+    },
+  },
+  {
+    data: {
+      id: "C inhibits D",
+      disease: "Leukemia",
+      source: "C",
+      target: "D",
+      interaction: "inhibit",
+    },
+  },
+  {
+    data: {
+      id: "B relates generally to E",
+      disease: "Leukemia",
+      source: "B",
+      target: "E",
+    },
+  },
+  {
+    data: {
+      id: "D relates generally to E",
+      disease: "Leukemia",
+      source: "D",
+      target: "E",
+    },
+  },
+];
 
 for (var i = 0; i < 25; i++) {
   elements.push({
@@ -9,7 +101,7 @@ for (var i = 0; i < 25; i++) {
     },
   });
 }
-const numElements = elements.length;
+const numElements = 25;
 for (i = 0; i < numElements; i++) {
   var randomTargetIndex = Math.floor(Math.random() * numElements);
   if (i !== randomTargetIndex) {
@@ -25,7 +117,7 @@ for (i = 0; i < numElements; i++) {
         Math.random() < 0.5 ? "disease 1" : "",
         Math.random() < 0.5 ? "disease 2" : "",
         Math.random() < 0.5 ? "isMutated" : "",
-        Math.random() < 0.5 ? "inhibitor" : "promoter",
+        Math.random() < 0.5 ? "inhibit" : "activate",
       ],
     });
     console.log(source);

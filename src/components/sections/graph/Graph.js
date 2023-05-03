@@ -3,6 +3,7 @@ import StyledDiv from "./Graph.styled";
 import { default as data } from "../../../data/Data";
 import CytoscapeComponent from "react-cytoscapejs";
 import { useEffect } from "react";
+import graphStyles from "./Graph.style.json";
 
 console.log(data);
 
@@ -29,52 +30,7 @@ export default function Graph() {
       <CytoscapeComponent
         cy={(cy) => (cyRef = cy)}
         layout={{ name: "circle" }}
-        stylesheet={[
-          {
-            selector: "node",
-            style: {
-              "background-color": "gray",
-              label: "data(id)",
-            },
-          },
-          {
-            selector: "node[?isMutated]",
-            style: {
-              shape: "star",
-              backgroundColor: "orange",
-            },
-          },
-          {
-            selector: ".isGrouped",
-            style: {
-              "background-color": "green",
-            },
-          },
-          {
-            selector: "edge",
-            style: {
-              width: 1,
-              "curve-style": "straight",
-              "arrow-scale": 2,
-            },
-          },
-          {
-            selector: ".inhibitor",
-            style: {
-              lineColor: "red",
-              "target-arrow-color": "red",
-              "target-arrow-shape": "triangle-backcurve",
-            },
-          },
-          {
-            selector: ".promoter",
-            style: {
-              lineColor: "green",
-              "target-arrow-color": "green",
-              "target-arrow-shape": "tee",
-            },
-          },
-        ]}
+        stylesheet={graphStyles}
         elements={data}
         style={{
           // 90% because of some infinite re-calculating of render (when 100%) to add/remove scroll bars
