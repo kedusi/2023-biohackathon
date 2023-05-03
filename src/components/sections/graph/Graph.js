@@ -28,12 +28,12 @@ export default function Graph() {
     <StyledDiv>
       <CytoscapeComponent
         cy={(cy) => (cyRef = cy)}
-        layout={{ name: "grid", rows: 5 }}
+        layout={{ name: "circle" }}
         stylesheet={[
           {
             selector: "node",
             style: {
-              "background-color": "tomato",
+              "background-color": "gray",
               label: "data(id)",
             },
           },
@@ -41,6 +41,7 @@ export default function Graph() {
             selector: "node[?isMutated]",
             style: {
               shape: "star",
+              backgroundColor: "orange",
             },
           },
           {
@@ -50,18 +51,35 @@ export default function Graph() {
             },
           },
           {
+            selector: "edge",
+            style: {
+              width: 1,
+              "curve-style": "straight",
+              "arrow-scale": 2,
+            },
+          },
+          {
             selector: ".inhibitor",
             style: {
-              lineColor: 'red',
+              lineColor: "red",
               "target-arrow-color": "red",
-              "target-arrow-shape": "triangle"
-            }
-          }
+              "target-arrow-shape": "triangle-backcurve",
+            },
+          },
+          {
+            selector: ".promoter",
+            style: {
+              lineColor: "green",
+              "target-arrow-color": "green",
+              "target-arrow-shape": "tee",
+            },
+          },
         ]}
         elements={data}
         style={{
-          height: "100%",
-          width: "100%",
+          // 90% because of some infinite re-calculating of render (when 100%) to add/remove scroll bars
+          height: "90%",
+          width: "90%",
         }}
       />
     </StyledDiv>
