@@ -112,13 +112,8 @@ for (i = 0; i < numElements; i++) {
         id: "edge" + i,
         source,
         target,
+        disease: Math.random() < 0.5 ? "disease 1" : "disease 2",
       },
-      classes: [
-        Math.random() < 0.5 ? "disease 1" : "",
-        Math.random() < 0.5 ? "disease 2" : "",
-        Math.random() < 0.5 ? "isMutated" : "",
-        Math.random() < 0.5 ? "inhibit" : "activate",
-      ],
     });
     console.log(source);
   }

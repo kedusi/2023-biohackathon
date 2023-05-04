@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 const styledDiv = styled.div`
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-`
-export default styledDiv
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+`;
+export default styledDiv;
