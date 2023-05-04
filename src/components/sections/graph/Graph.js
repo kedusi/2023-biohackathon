@@ -4,6 +4,9 @@ import { default as importData } from "../../../data/Data";
 import CytoscapeComponent from "react-cytoscapejs";
 import { useEffect, useState } from "react";
 import graphStyles from "./Graph.style.json";
+// import { use as cytoscapeUse } from "cytoscape";
+// import cola from "cytoscape-cola";
+// cytoscapeUse(cola);
 
 console.log(importData);
 const options = ["Leukemia", "disease 1", "disease 2"];
@@ -51,7 +54,7 @@ export default function Graph() {
         cy={(cy) => (cyRef = cy)}
         layout={{ name: "circle" }}
         stylesheet={graphStyles}
-        elements={importData}
+        elements={CytoscapeComponent.normalizeElements(importData)}
         style={{
           // 99% because of some infinite re-calculating of render (when 100%) to add/remove scroll bars
           height: "99%",

@@ -3,7 +3,9 @@
       "selector": "node",
       "style": {
         "background-color": "gray",
-        "label": "data(id)"
+        "label": "data(id)",
+        "height": "15px",
+        "width": "15px"
       }
     },
     {
@@ -24,8 +26,7 @@
       "style": {
         "width": 1,
         "curve-style": "bezier",
-        "arrow-scale": 2,
-        "label": "data(id)"
+        "arrow-scale": 2
       }
     },
     {

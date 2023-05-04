@@ -1,0 +1,8 @@
+Gene_1	Gene_2	Function	Disease	Source_PMID/DOI	Unique_Ref_id
+A	C	activates	Leukemia	X	1
+C	A	suppress	Leukemia	Y	2
+A	B	activates	Leukemia	Y	3
+B	C	suppress	Leukemia	Z	4
+C	D	inhibits	Leukemia	N	5
+B	E	NA	Leukemia	U	6
+D	E	NA	Leukemia	U	7
