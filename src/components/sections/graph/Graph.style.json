@@ -30,7 +30,7 @@
       }
     },
     {
-      "selector": "[interaction = 'inhibit']",
+      "selector": "[function = 'inhibits']",
       "style": {
         "lineColor": "red",
         "target-arrow-color": "red",
@@ -38,7 +38,7 @@
       }
     },
     {
-      "selector": "[interaction = 'activate']",
+      "selector": "[function = 'activates']",
       "style": {
         "lineColor": "green",
         "target-arrow-color": "green",
@@ -46,7 +46,7 @@
       }
     },
     {
-      "selector": "[interaction = 'suppress']",
+      "selector": "[function = 'suppress']",
       "style": {
         "lineColor": "purple",
         "target-arrow-color": "purple",
@@ -54,7 +54,7 @@
       }
     },
     {
-      "selector": "edge[^interaction]",
+      "selector": "edge[^function]",
       "style": {
         "lineColor": "blue"
       }

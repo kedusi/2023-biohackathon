@@ -4,9 +4,9 @@ import { default as importData } from "../../../data/Data";
 import CytoscapeComponent from "react-cytoscapejs";
 import { useEffect, useState } from "react";
 import graphStyles from "./Graph.style.json";
-// import { use as cytoscapeUse } from "cytoscape";
-// import cola from "cytoscape-cola";
-// cytoscapeUse(cola);
+import cytoscape from "cytoscape";
+import cola from "cytoscape-cola";
+cytoscape.use(cola);
 
 console.log(importData);
 const options = ["Leukemia", "disease 1", "disease 2"];
@@ -25,7 +25,7 @@ export default function Graph() {
     const leukemiaNodes = cyRef.$("[disease = '" + disease + "']");
     const notLeukemiaNodes = cyRef.elements().not(leukemiaNodes).remove();
     setRemoved(notLeukemiaNodes);
-    leukemiaNodes.layout({ name: "circle" }).run();
+    leukemiaNodes.layout({ name: "cola" }).run();
   };
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export default function Graph() {
       </form>
       <CytoscapeComponent
         cy={(cy) => (cyRef = cy)}
-        layout={{ name: "circle" }}
+        layout={{ name: "cola" }}
         stylesheet={graphStyles}
         elements={CytoscapeComponent.normalizeElements(importData)}
         style={{
