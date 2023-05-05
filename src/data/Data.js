@@ -19,6 +19,7 @@ for (let row of data) {
         data: {
           id: gene,
           disease,
+          tooltip: "<p>Hello, Tooltip-World!</p>",
         },
       });
     }

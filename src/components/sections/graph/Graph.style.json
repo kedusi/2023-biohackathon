@@ -2,7 +2,7 @@
     {
       "selector": "node",
       "style": {
-        "background-color": "gray",
+        "background-color": "blue",
         "label": "data(id)",
         "height": "15px",
         "width": "15px"
@@ -54,7 +54,7 @@
       }
     },
     {
-      "selector": "edge[^function]",
+      "selector": "[function = 'NA']",
       "style": {
         "lineColor": "blue"
       }
