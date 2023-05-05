@@ -77,15 +77,18 @@ export default function Graph() {
 
   return (
     <StyledDiv>
-      <form>
-        <select value={disease} onChange={(e) => setDisease(e.target.value)}>
-          {options.map((value) => (
-            <option value={value} key={value}>
-              {value}
-            </option>
-          ))}
-        </select>
-      </form>
+      <div id="header" style={{ width: "100%", textAlign: "center" }}>
+        <h1>Team 4: Gene-Gene Interaction with CytoscapeJS</h1>
+        <form style={{ display: "inline" }}>
+          <select value={disease} onChange={(e) => setDisease(e.target.value)}>
+            {options.map((value) => (
+              <option value={value} key={value}>
+                {value}
+              </option>
+            ))}
+          </select>
+        </form>
+      </div>
       <CytoscapeComponent
         cy={(cy) => (cyRef = cy)}
         layout={{ name: "cola" }}
@@ -93,8 +96,8 @@ export default function Graph() {
         elements={CytoscapeComponent.normalizeElements(importData)}
         style={{
           // 99% because of some infinite re-calculating of render (when 100%) to add/remove scroll bars
-          height: "99%",
-          width: "99%",
+          height: "85%",
+          width: "85%",
         }}
       />
     </StyledDiv>
