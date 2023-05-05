@@ -4,7 +4,7 @@
     "Gene_2": "C",
     "Function": "activates",
     "Disease": "Leukemia",
-    "Source_PMID/DOI": "X",
+    "Source_PMID_DOI": "X",
     "Unique_Ref_id": "1"
   },
   {
@@ -12,7 +12,7 @@
     "Gene_2": "A",
     "Function": "suppress",
     "Disease": "Leukemia",
-    "Source_PMID/DOI": "Y",
+    "Source_PMID_DOI": "Y",
     "Unique_Ref_id": "2"
   },
   {
@@ -20,7 +20,7 @@
     "Gene_2": "B",
     "Function": "activates",
     "Disease": "Leukemia",
-    "Source_PMID/DOI": "Y",
+    "Source_PMID_DOI": "Y",
     "Unique_Ref_id": "3"
   },
   {
@@ -28,7 +28,7 @@
     "Gene_2": "C",
     "Function": "suppress",
     "Disease": "Leukemia",
-    "Source_PMID/DOI": "Z",
+    "Source_PMID_DOI": "Z",
     "Unique_Ref_id": "4"
   },
   {
@@ -36,7 +36,7 @@
     "Gene_2": "D",
     "Function": "inhibits",
     "Disease": "Leukemia",
-    "Source_PMID/DOI": "N",
+    "Source_PMID_DOI": "N",
     "Unique_Ref_id": "5"
   },
   {
@@ -44,7 +44,7 @@
     "Gene_2": "E",
     "Function": "NA",
     "Disease": "Leukemia",
-    "Source_PMID/DOI": "U",
+    "Source_PMID_DOI": "U",
     "Unique_Ref_id": "6"
   },
   {
@@ -52,7 +52,7 @@
     "Gene_2": "E",
     "Function": "NA",
     "Disease": "Leukemia",
-    "Source_PMID/DOI": "U",
+    "Source_PMID_DOI": "U",
     "Unique_Ref_id": "7"
   }
 ]

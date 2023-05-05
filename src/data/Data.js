@@ -10,6 +10,8 @@ for (let row of data) {
     Gene_2: target,
     Function: rowFunction,
     Disease: disease,
+    Source_PMID_DOI: ref1,
+    Unique_Ref_id: ref2,
   } = row;
   for (let gene of [source, target]) {
     const existingGene = nodes.find((node) => node.data.id === gene);
@@ -19,7 +21,12 @@ for (let row of data) {
         data: {
           id: gene,
           disease,
-          tooltip: "<p>Hello, Tooltip-World!</p>",
+          tooltip:
+            "<p>Source_PMID/DOI: " +
+            ref1 +
+            "</p><p>Unique_Ref_id: " +
+            ref2 +
+            "</p>",
         },
       });
     }

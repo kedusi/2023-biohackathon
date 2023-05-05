@@ -43,7 +43,6 @@ export default function Graph() {
   }, [showInfoBox]);
 
   useEffect(() => {
-    console.log(cyRef);
     cyRef.on("mouseover", "node", (e) => {
       let node = e.target;
       addToGroup(node);
