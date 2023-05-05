@@ -1,4 +1,4 @@
-import data from "./data.json";
+import data from "./realInteractionData.json";
 
 let nodes = [];
 let edges = [];
@@ -10,26 +10,37 @@ for (let row of data) {
     Gene_2: target,
     Function: rowFunction,
     Disease: disease,
-    Source_PMID_DOI: ref1,
-    Unique_Ref_id: ref2,
+    ncbiTaxonId: ref1,
+    stringId_A: ref2,
+    stringId_B: ref3,
   } = row;
-  for (let gene of [source, target]) {
-    const existingGene = nodes.find((node) => node.data.id === gene);
 
-    if (!existingGene) {
-      nodes.push({
-        data: {
-          id: gene,
-          disease,
-          tooltip:
-            "<p>Source_PMID/DOI: " +
-            ref1 +
-            "</p><p>Unique_Ref_id: " +
-            ref2 +
-            "</p>",
-        },
-      });
-    }
+  let existingGene = nodes.find((node) => node.data.id === source);
+
+  if (!existingGene) {
+    nodes.push({
+      data: {
+        id: source,
+        disease,
+        tooltip: "<p>ncbiTaxonId: " + ref1 + "</p><p>id: " + ref2 + "</p>",
+      },
+    });
+  } else {
+    existingGene.data.disease += " " + disease;
+  }
+
+  existingGene = nodes.find((node) => node.data.id === target);
+
+  if (!existingGene) {
+    nodes.push({
+      data: {
+        id: target,
+        disease,
+        tooltip: "<p>ncbiTaxonId: " + ref1 + "</p><p>id: " + ref3 + "</p>",
+      },
+    });
+  } else {
+    existingGene.data.disease += " " + disease;
   }
 
   edges.push({
@@ -50,6 +61,12 @@ for (let row of data) {
     allDiseases.push(disease);
   }
 }
+
+nodes.map((el, idx) => {
+  if (idx % 2) {
+    el.data.isMutated = true;
+  }
+});
 
 for (var i = 0; i < 25; i++) {
   nodes.push({

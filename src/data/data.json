@@ -3,7 +3,7 @@
     "Gene_1": "A",
     "Gene_2": "C",
     "Function": "activates",
-    "Disease": "Leukemia",
+    "Disease": "Leukemia, somethingelse",
     "Source_PMID_DOI": "X",
     "Unique_Ref_id": "1"
   },
