@@ -101,19 +101,21 @@ export default function Graph() {
   return (
     <StyledDiv>
       <div id="header" style={{ width: "100%", textAlign: "center" }}>
-        <h1>Team 4: Gene-Gene Interaction with CytoscapeJS</h1>
-        <select
-          value={disease}
-          onChange={(e) => setDisease(e.target.value)}
-          style={{ display: "inline" }}
-        >
+        <h1>
+          Decoding Disease specific Gene Networks using Natural Language
+          Processing on PubMed
+        </h1>
+      </div>
+      <div style={{ display: "inline" }}>
+        <label>Disease:</label>
+        <select value={disease} onChange={(e) => setDisease(e.target.value)}>
           {options.map((value) => (
             <option value={value} key={value}>
               {value}
             </option>
           ))}
         </select>
-        <button style={{ display: "inline" }} onClick={handleShowMutations}>
+        <button onClick={handleShowMutations}>
           {showMutations ? "Hide Mutations" : "Show Mutations"}
         </button>
       </div>
