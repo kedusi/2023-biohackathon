@@ -7,6 +7,7 @@ import graphStyles from "./Graph.style.json";
 import cytoscape from "cytoscape";
 import cola from "cytoscape-cola";
 import { tippy } from "@tippyjs/react";
+import Controls from "../controls/Controls";
 cytoscape.use(cola);
 // cytoscape.use(popper);
 
@@ -30,6 +31,11 @@ export default function Graph() {
 
   const addToGroup = (el) => el.addClass("isGrouped");
   const removeFromGroup = (el) => el.removeClass("isGrouped");
+  const handleDiseaseSelect = (e) => setDisease(e.target.value);
+  const handleMutationClick = () => {
+    setShowMutations((curr) => !curr);
+    console.log("clicked");
+  };
 
   const filterForDisease = () => {
     removed && removed.restore();
@@ -86,10 +92,6 @@ export default function Graph() {
     filterForDisease();
   }, [disease]);
 
-  const handleShowMutations = () => {
-    setShowMutations((curr) => !curr);
-  };
-
   useEffect(() => {
     if (showMutations) {
       cyRef.$("[?isMutated]").addClass("isMutated");
@@ -100,25 +102,6 @@ export default function Graph() {
 
   return (
     <StyledDiv>
-      <div id="header" style={{ width: "100%", textAlign: "center" }}>
-        <h1>
-          Decoding Disease specific Gene Networks using Natural Language
-          Processing on PubMed
-        </h1>
-      </div>
-      <div style={{ display: "inline" }}>
-        <label>Disease:</label>
-        <select value={disease} onChange={(e) => setDisease(e.target.value)}>
-          {options.map((value) => (
-            <option value={value} key={value}>
-              {value}
-            </option>
-          ))}
-        </select>
-        <button onClick={handleShowMutations}>
-          {showMutations ? "Hide Mutations" : "Show Mutations"}
-        </button>
-      </div>
       <CytoscapeComponent
         cy={(cy) => (cyRef = cy)}
         layout={{ name: "circle" }}
