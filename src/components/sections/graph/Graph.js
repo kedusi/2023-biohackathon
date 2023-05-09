@@ -7,35 +7,20 @@ import graphStyles from "./Graph.style.json";
 import cytoscape from "cytoscape";
 import cola from "cytoscape-cola";
 import { tippy } from "@tippyjs/react";
-import Controls from "../controls/Controls";
 cytoscape.use(cola);
 // cytoscape.use(popper);
 
 console.log(importData);
-const options = [
-  "No Filter",
-  "ALL",
-  "AML",
-  "CML",
-  "acute promyelocytic leukemia",
-];
 
 export default function Graph() {
-  const [disease, setDisease] = useState(options[0]);
   const [removed, setRemoved] = useState();
   const [infoBox, setInfoBox] = useState();
   const [showInfoBox, setShowInfoBox] = useState();
-  const [showMutations, setShowMutations] = useState(false);
 
   let cyRef;
 
   const addToGroup = (el) => el.addClass("isGrouped");
   const removeFromGroup = (el) => el.removeClass("isGrouped");
-  const handleDiseaseSelect = (e) => setDisease(e.target.value);
-  const handleMutationClick = () => {
-    setShowMutations((curr) => !curr);
-    console.log("clicked");
-  };
 
   const filterForDisease = () => {
     removed && removed.restore();

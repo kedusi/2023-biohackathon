@@ -25,8 +25,14 @@ export default function (props) {
         </select>
       </div>
       <div id="mutations">
-        <button onClick={handleMutationClick}>
-          {showMutations ? "Hide Mutations" : "Show Mutations"}
+        <button
+          onClick={handleMutationClick}
+          style={{
+            color: "white",
+            backgroundColor: showMutations ? "green" : "gray",
+          }}
+        >
+          Mutations
         </button>
       </div>
     </div>
