@@ -22,7 +22,11 @@ export default function Home(props) {
     <>
       <h1>Home Page!</h1>
       <h3>What! What!</h3>
-      <Graph />
+      <Graph
+        disease={disease}
+        options={options}
+        showMutations={showMutations}
+      />
       <Controls
         disease={disease}
         diseaseOptions={options}

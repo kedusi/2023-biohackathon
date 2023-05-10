@@ -2,7 +2,7 @@ import StyledDiv from "./Graph.styled";
 
 import { default as importData } from "../../../data/Data";
 import CytoscapeComponent from "react-cytoscapejs";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import graphStyles from "./Graph.style.json";
 import cytoscape from "cytoscape";
 import cola from "cytoscape-cola";
@@ -12,7 +12,8 @@ cytoscape.use(cola);
 
 console.log(importData);
 
-export default function Graph() {
+export default function Graph(props) {
+  const { disease, options, showMutations } = props;
   const [removed, setRemoved] = useState();
   const [infoBox, setInfoBox] = useState();
   const [showInfoBox, setShowInfoBox] = useState();
@@ -22,7 +23,7 @@ export default function Graph() {
   const addToGroup = (el) => el.addClass("isGrouped");
   const removeFromGroup = (el) => el.removeClass("isGrouped");
 
-  const filterForDisease = () => {
+  const filterForDisease = useCallback(() => {
     removed && removed.restore();
     setRemoved();
     if (disease === options[0]) {
@@ -33,7 +34,7 @@ export default function Graph() {
       setRemoved(notSelectedNodes);
       selectedNodes.layout({ name: "cola" }).run();
     }
-  };
+  }, [cyRef, disease, options, removed]);
 
   useEffect(() => {
     if (infoBox && showInfoBox) {
@@ -42,7 +43,7 @@ export default function Graph() {
       infoBox.destroy();
       setInfoBox();
     }
-  }, [showInfoBox]);
+  }, [showInfoBox, infoBox]);
 
   useEffect(() => {
     cyRef.on("mouseover", "node", (e) => {
@@ -75,7 +76,7 @@ export default function Graph() {
 
   useEffect(() => {
     filterForDisease();
-  }, [disease]);
+  }, [removed, filterForDisease]);
 
   useEffect(() => {
     if (showMutations) {
@@ -83,7 +84,7 @@ export default function Graph() {
     } else {
       cyRef.$("[?isMutated]").removeClass("isMutated");
     }
-  }, [showMutations]);
+  }, [showMutations, cyRef]);
 
   return (
     <StyledDiv>

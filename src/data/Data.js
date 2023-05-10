@@ -62,7 +62,7 @@ for (let row of data) {
   }
 }
 
-nodes.map((el, idx) => {
+nodes.forEach((el, idx) => {
   if (idx % 2) {
     el.data.isMutated = true;
   }

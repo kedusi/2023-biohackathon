@@ -8,7 +8,7 @@ const HOME = "home";
 // CREDITS = 'credits'
 
 function App() {
-  const [page, setPage] = useState(HOME);
+  const [page] = useState(HOME);
 
   return (
     <>
@@ -42,14 +42,13 @@ function App() {
             Processing on PubMed
           </h1>
         </div>
-        {page === HOME && <Home />}
+        <div id="content">{page === HOME && <Home />}</div>
         <div id="footerSection">
           <p style={{ backgroundColor: "maroon", color: "white" }}>
             Footer Section
           </p>
         </div>
       </div>
-      ;
     </>
   );
 }

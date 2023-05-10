@@ -1,4 +1,4 @@
-export default function (props) {
+export default function Controls(props) {
   const {
     disease,
     diseaseOptions,
@@ -39,18 +39,16 @@ export default function (props) {
   );
 }
 
-{
-  /* <div style={{ display: "inline" }}>
-        <label>Disease:</label>
-        <select value={disease} onChange={(e) => setDisease(e.target.value)}>
-          {options.map((value) => (
-            <option value={value} key={value}>
-              {value}
-            </option>
-          ))}
-        </select>
-        <button onClick={handleShowMutations}>
-          {showMutations ? "Hide Mutations" : "Show Mutations"}
-        </button>
-      </div> */
-}
+/* <div style={{ display: "inline" }}>
+    <label>Disease:</label>
+    <select value={disease} onChange={(e) => setDisease(e.target.value)}>
+        {options.map((value) => (
+        <option value={value} key={value}>
+            {value}
+        </option>
+        ))}
+    </select>
+    <button onClick={handleShowMutations}>
+        {showMutations ? "Hide Mutations" : "Show Mutations"}
+    </button>
+    </div> */
