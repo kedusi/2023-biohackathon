@@ -19,14 +19,9 @@ export default function Home(props) {
     console.log("clicked");
   };
   return (
-    <>
+    <div id="home" style={{ position: "relative" }}>
       <h1>Home Page!</h1>
       <h3>What! What!</h3>
-      <Graph
-        disease={disease}
-        options={options}
-        showMutations={showMutations}
-      />
       <Controls
         disease={disease}
         diseaseOptions={options}
@@ -34,6 +29,11 @@ export default function Home(props) {
         handleMutationClick={handleMutationClick}
         showMutations={showMutations}
       />
-    </>
+      <Graph
+        disease={disease}
+        options={options}
+        showMutations={showMutations}
+      />
+    </div>
   );
 }

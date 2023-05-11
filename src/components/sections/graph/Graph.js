@@ -1,4 +1,4 @@
-import StyledDiv from "./Graph.styled";
+import { StyledDiv } from "./Graph.styled";
 
 import { default as importData } from "../../../data/Data";
 import CytoscapeComponent from "react-cytoscapejs";
@@ -94,9 +94,10 @@ export default function Graph(props) {
         stylesheet={graphStyles}
         elements={CytoscapeComponent.normalizeElements(importData)}
         style={{
-          // 99% because of some infinite re-calculating of render (when 100%) to add/remove scroll bars
-          height: "85%",
-          width: "85%",
+          position: "relative",
+          height: "200px",
+          width: "200px",
+          border: "1 solid red",
         }}
       />
     </StyledDiv>

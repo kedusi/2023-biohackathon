@@ -8,7 +8,7 @@ export default function Controls(props) {
   } = props;
 
   return (
-    <div id="controls">
+    <div style={{ border: "1px solid orange" }} id="controls">
       <div id="disease">
         <label htmlFor="diseaseSelect">Disease: </label>
         <select
