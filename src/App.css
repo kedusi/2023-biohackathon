@@ -3,42 +3,47 @@
 }
 
 .App {
-    border: 10px solid maroon;
+    border: 2vh solid maroon;
 }
 
 #headerSection {
-    border: 3px solid white;
+    border: .5vh solid white;
     height: 20vh;
 }
 
 #content {
-    border: 1px solid red;
+    border-top: 1vh solid maroon;
+    border-bottom: 1vh solid maroon;
     height: 60vh;
 }
 
 #home {
-    border: 1px solid blue;
     position: relative;
+    height: 100%;
     display: flex;
 }
 
 #controls {
-    border: 1px solid orange;
+    border: .5vh solid white;
+    background-color: maroon;
+    padding: 1vh;
+    color: white;
 }
 
 #cyWrapper {
-    border: 1px solid brown;
+    border-left: 1vh solid maroon;
     position: relative;
-    height: 60vh;
+    height: 100%;
+    width: 100%;
 }
 
 #cy {
-    border: 1px solid rebeccapurple;
     position: absolute;
     height: 100%;
+    width: 100%;
 }
 
 #footerSection {
-    border: 1px solid orchid;
-    height: 20vh;
+    border: .5vh solid white;
+    height: 16vh;
 }
