@@ -1,6 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
 .App {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    border: 10px solid maroon;
+}
+
+#headerSection {
+    border: 3px solid white;
+    height: 20vh;
+}
+
+#content {
+    border: 1px solid red;
+    height: 60vh;
+}
+
+#home {
+    border: 1px solid blue;
+    position: relative;
+    display: flex;
+}
+
+#controls {
+    border: 1px solid orange;
+}
+
+#cyWrapper {
+    border: 1px solid brown;
+    position: relative;
+    height: 60vh;
+}
+
+#cy {
+    border: 1px solid rebeccapurple;
+    position: absolute;
+    height: 100%;
+}
+
+#footerSection {
+    border: 1px solid orchid;
+    height: 20vh;
 }

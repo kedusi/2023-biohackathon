@@ -19,9 +19,7 @@ export default function Home(props) {
     console.log("clicked");
   };
   return (
-    <div id="home" style={{ position: "relative" }}>
-      <h1>Home Page!</h1>
-      <h3>What! What!</h3>
+    <div id="home">
       <Controls
         disease={disease}
         diseaseOptions={options}

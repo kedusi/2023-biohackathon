@@ -87,19 +87,14 @@ export default function Graph(props) {
   }, [showMutations, cyRef]);
 
   return (
-    <StyledDiv>
+    <div id="cyWrapper">
       <CytoscapeComponent
         cy={(cy) => (cyRef = cy)}
         layout={{ name: "circle" }}
         stylesheet={graphStyles}
         elements={CytoscapeComponent.normalizeElements(importData)}
-        style={{
-          position: "relative",
-          height: "200px",
-          width: "200px",
-          border: "1 solid red",
-        }}
+        id="cy"
       />
-    </StyledDiv>
+    </div>
   );
 }

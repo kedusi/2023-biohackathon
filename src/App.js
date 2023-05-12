@@ -11,7 +11,7 @@ function App() {
   const [page] = useState(HOME);
 
   return (
-    <div className="App">
+    <div className="App" id="app">
       <div
         id="headerSection"
         style={{
@@ -44,8 +44,21 @@ function App() {
       <div id="content" style={{ display: "flex", flexDirection: "column" }}>
         {page === HOME && <Home />}
       </div>
-      <div id="footerSection">
-        <p style={{ backgroundColor: "maroon", color: "white" }}>
+      <div
+        id="footerSection"
+        style={{
+          backgroundColor: "maroon",
+          color: "white",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <p
+          style={{
+            width: "100%",
+            textAlign: "center",
+          }}
+        >
           Footer Section
         </p>
       </div>
