@@ -44,24 +44,6 @@ function App() {
       <div id="content" style={{ display: "flex", flexDirection: "column" }}>
         {page === HOME && <Home />}
       </div>
-      <div
-        id="footerSection"
-        style={{
-          backgroundColor: "maroon",
-          color: "white",
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        <p
-          style={{
-            width: "100%",
-            textAlign: "center",
-          }}
-        >
-          Footer Section
-        </p>
-      </div>
     </div>
   );
 }

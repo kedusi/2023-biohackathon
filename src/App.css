@@ -8,13 +8,13 @@
 
 #headerSection {
     border: .5vh solid white;
-    height: 20vh;
+    height: 15vh;
 }
 
 #content {
     border-top: 1vh solid maroon;
     border-bottom: 1vh solid maroon;
-    height: 60vh;
+    height: 80vh;
 }
 
 #home {
@@ -32,6 +32,7 @@
 
 #cyWrapper {
     border-left: 1vh solid maroon;
+    border-right: 1vh solid maroon;
     position: relative;
     height: 100%;
     width: 100%;
@@ -43,7 +44,9 @@
     width: 100%;
 }
 
-#footerSection {
+#infoBox {
     border: .5vh solid white;
-    height: 16vh;
+    background-color: maroon;
+    padding: 1vh;
+    color: white;
 }

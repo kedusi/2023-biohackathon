@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Controls from "../../sections/controls/Controls";
 import Graph from "../../sections/graph/Graph";
+import { InfoBox } from "../../sections/infoBox/InfoBox";
 
 const options = [
   "No Filter",
@@ -13,6 +14,8 @@ const options = [
 export default function Home(props) {
   const [showMutations, setShowMutations] = useState(false);
   const [disease, setDisease] = useState(options[0]);
+  const [nodeData, setNodeData] = useState("");
+
   const handleDiseaseSelect = (e) => setDisease(e.target.value);
   const handleMutationClick = () => {
     setShowMutations((curr) => !curr);
@@ -31,7 +34,9 @@ export default function Home(props) {
         disease={disease}
         options={options}
         showMutations={showMutations}
+        updateNodeData={setNodeData}
       />
+      <InfoBox nodeData={nodeData} />
     </div>
   );
 }

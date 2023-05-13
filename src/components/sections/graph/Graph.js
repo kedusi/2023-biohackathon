@@ -6,14 +6,12 @@ import { useCallback, useEffect, useState } from "react";
 import graphStyles from "./Graph.style.json";
 import cytoscape from "cytoscape";
 import cola from "cytoscape-cola";
-import { tippy } from "@tippyjs/react";
 cytoscape.use(cola);
-// cytoscape.use(popper);
 
 console.log(importData);
 
 export default function Graph(props) {
-  const { disease, options, showMutations } = props;
+  const { disease, options, showMutations, updateNodeData } = props;
   const [removed, setRemoved] = useState();
   const [infoBox, setInfoBox] = useState();
   const [showInfoBox, setShowInfoBox] = useState();
@@ -50,21 +48,7 @@ export default function Graph(props) {
       let node = e.target;
       addToGroup(node);
       if (node.data("tooltip")) {
-        let dummyDiv = document.createElement("div");
-        dummyDiv.setAttribute("id", "nodeInfo");
-
-        setInfoBox(
-          new tippy(dummyDiv, {
-            trigger: "manual",
-            content: () => {
-              let content = document.createElement("div");
-              content.innerHTML = node.data("tooltip");
-              return content;
-            },
-          })
-        );
-
-        setShowInfoBox(true);
+        updateNodeData(node.data("tooltip"));
       }
     });
 
