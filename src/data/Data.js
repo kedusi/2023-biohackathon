@@ -10,9 +10,9 @@ for (let row of data) {
     Gene_2: target,
     Function: rowFunction,
     Disease: disease,
-    ncbiTaxonId: ref1,
-    stringId_A: ref2,
-    stringId_B: ref3,
+    ncbiTaxonId,
+    stringId_A,
+    stringId_B,
   } = row;
 
   let existingGene = nodes.find((node) => node.data.id === source);
@@ -22,7 +22,8 @@ for (let row of data) {
       data: {
         id: source,
         disease,
-        tooltip: "<p>ncbiTaxonId: " + ref1 + "</p><p>id: " + ref2 + "</p>",
+        ncbiTaxonId,
+        stringId: stringId_A,
       },
     });
   } else {
@@ -36,7 +37,8 @@ for (let row of data) {
       data: {
         id: target,
         disease,
-        tooltip: "<p>ncbiTaxonId: " + ref1 + "</p><p>id: " + ref3 + "</p>",
+        ncbiTaxonId,
+        stringId: stringId_B,
       },
     });
   } else {

@@ -30,6 +30,10 @@
     color: white;
 }
 
+#controls * {
+    width: 100%;
+}
+
 #cyWrapper {
     border-left: 1vh solid maroon;
     border-right: 1vh solid maroon;

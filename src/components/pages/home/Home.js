@@ -11,7 +11,7 @@ const options = [
   "acute promyelocytic leukemia",
 ];
 
-export default function Home(props) {
+export default function Home() {
   const [showMutations, setShowMutations] = useState(false);
   const [disease, setDisease] = useState(options[0]);
   const [nodeData, setNodeData] = useState("");

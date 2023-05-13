@@ -47,9 +47,11 @@ export default function Graph(props) {
     cyRef.on("mouseover", "node", (e) => {
       let node = e.target;
       addToGroup(node);
-      if (node.data("tooltip")) {
-        updateNodeData(node.data("tooltip"));
-      }
+      updateNodeData(
+        `stringId: ${node.data("stringId")}\nncbiTaxonId: ${node.data(
+          "ncbiTaxonId"
+        )}`
+      );
     });
 
     cyRef.on("mouseout", "node", (e) => {
