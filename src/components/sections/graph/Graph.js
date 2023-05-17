@@ -30,9 +30,9 @@ export default function Graph(props) {
       const selectedNodes = cyRef.$("[disease *= '" + disease + "']");
       const notSelectedNodes = cyRef.elements().not(selectedNodes).remove();
       setRemoved(notSelectedNodes);
-      selectedNodes.layout({ name: "cola" }).run();
+      selectedNodes.layout({ name: "circle" }).run();
     }
-  }, [cyRef, disease, options, removed]);
+  }, [disease, options, removed]);
 
   useEffect(() => {
     if (infoBox && showInfoBox) {
@@ -47,11 +47,11 @@ export default function Graph(props) {
     cyRef.on("mouseover", "node", (e) => {
       let node = e.target;
       addToGroup(node);
-      updateNodeData(
-        `stringId: ${node.data("stringId")}\nncbiTaxonId: ${node.data(
-          "ncbiTaxonId"
-        )}`
-      );
+      updateNodeData({
+        id: node.data("id"),
+        stringId: node.data("stringId"),
+        ncbiTaxonId: node.data("ncbiTaxonId"),
+      });
     });
 
     cyRef.on("mouseout", "node", (e) => {
